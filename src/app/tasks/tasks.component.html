@@ -1,0 +1,25 @@
+<div class="card">
+	<div class="card-header card-header-warning">
+		<h4 class="card-title">Список Задач</h4>
+	</div>
+	<div class="card-body table-responsive">
+		<table class="table table-hover">
+			<thead class="text-warning">
+				<th>номер</th>
+				<th>название</th>
+				<th>преоритет</th>
+				<th>категория</th>
+				<th>дата</th>
+			</thead>
+			<tbody>
+				<tr *ngFor="let task of tasks">
+					<td>{{task.id}}</td>
+					<td>{{task.title}}</td>
+					<td></td>
+					<td>Niger</td>
+				</tr>
+
+			</tbody>
+		</table>
+	</div>
+</div>
