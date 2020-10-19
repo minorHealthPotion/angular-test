@@ -44,6 +44,38 @@ export class TestData {
 
       category: TestData.categories[2],
       date: new Date("2019-12-09")
+    },
+    {
+      id: 4,
+      title: "починить дверь",
+      priority: TestData.priorities[2],
+
+      category: TestData.categories[6],
+      date: new Date("2019-12-09")
+    },
+    {
+      id: 5,
+      title: "питаться правильно",
+      priority: TestData.priorities[2],
+
+      category: TestData.categories[4],
+      date: new Date("2019-12-09")
+    },
+    {
+      id: 6,
+      title: "отправиться в отпуск",
+      priority: TestData.priorities[1],
+
+      category: TestData.categories[2],
+      date: new Date("2019-12-09")
+    },
+    {
+      id: 7,
+      title: "сменить резину",
+      priority: TestData.priorities[3],
+
+      category: TestData.categories[6],
+      date: new Date("2019-12-09")
     }
   ];
 }

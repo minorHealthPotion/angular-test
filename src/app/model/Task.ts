@@ -10,7 +10,7 @@ export class Task {
   constructor(
     id: number,
     title: string,
-    priority?: Priority,
+    priority: Priority,
     category?: Category,
     date?: Date
   ) {
