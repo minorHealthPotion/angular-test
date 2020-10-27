@@ -25,7 +25,7 @@ export class TestData {
       id: 1,
       title: "залить бензин полный бак",
       priority: TestData.priorities[2],
-
+      completed: false,
       category: TestData.categories[6],
       date: new Date("2019-11-02")
     },
@@ -33,7 +33,7 @@ export class TestData {
       id: 2,
       title: "приготовить ужин",
       priority: TestData.priorities[4],
-
+      completed: false,
       category: TestData.categories[4],
       date: new Date("2020-12-20")
     },
@@ -41,15 +41,14 @@ export class TestData {
       id: 3,
       title: "перевести дух",
       priority: TestData.priorities[1],
-
-      category: TestData.categories[2],
-      date: new Date("2019-12-09")
+      completed: false,
+      category: TestData.categories[2]
     },
     {
       id: 4,
       title: "починить дверь",
       priority: TestData.priorities[2],
-
+      completed: true,
       category: TestData.categories[6],
       date: new Date("2019-12-09")
     },
@@ -57,7 +56,7 @@ export class TestData {
       id: 5,
       title: "питаться правильно",
       priority: TestData.priorities[2],
-
+      completed: false,
       category: TestData.categories[4],
       date: new Date("2019-12-09")
     },
@@ -65,7 +64,7 @@ export class TestData {
       id: 6,
       title: "отправиться в отпуск",
       priority: TestData.priorities[1],
-
+      completed: false,
       category: TestData.categories[2],
       date: new Date("2019-12-09")
     },
@@ -73,7 +72,7 @@ export class TestData {
       id: 7,
       title: "сменить резину",
       priority: TestData.priorities[3],
-
+      completed: false,
       category: TestData.categories[6],
       date: new Date("2019-12-09")
     }

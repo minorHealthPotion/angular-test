@@ -12,12 +12,13 @@
 				<th>дата</th>
 			</thead>
 			<tbody>
-				<tr *ngFor="let task of tasks">
-					<td>{{task.id}}</td>
+				<tr *ngFor="let task of tasks ; let i = index">
+					<td>{{i}}</td>
 					<td>{{task.title}}</td>
-					<td>{{task.priority}}</td>
-					<td>{{task.category}}</td>
-					<td></td>
+					<td>{{task.priority != null ? task.priority.title : "без приоритета"}}</td>
+					<td>{{task.category != null ? task.category.title : "без категории"}}</td>
+					<td>{{tsk.date != null ? (task.date | date:medium):"без даты"}}</td>
+					<td>{{task.completed}}</td>
 				</tr>
 
 			</tbody>
