@@ -41,8 +41,7 @@ export class TestData {
       id: 3,
       title: "перевести дух",
       priority: TestData.priorities[1],
-      completed: false,
-      category: TestData.categories[2]
+      completed: false
     },
     {
       id: 4,
