@@ -7,14 +7,14 @@ export class Task {
   priority?: Priority;
   category?: Category;
   date?: Date;
-  completed: boolean;
+  completed?: boolean;
   constructor(
     id: number,
     title: string,
     priority: Priority,
     category?: Category,
     date?: Date,
-    completed: boolean
+    completed?: boolean
   ) {
     this.id = id;
     this.title = title;
@@ -22,5 +22,6 @@ export class Task {
     this.completed = completed;
     this.category = category;
     this.date = date;
+    this.completed = completed;
   }
 }

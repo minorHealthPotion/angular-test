@@ -17,7 +17,7 @@
 					<td>{{task.title}}</td>
 					<td>{{task.priority != null ? task.priority.title : "без приоритета"}}</td>
 					<td>{{task.category != null ? task.category.title : "без категории"}}</td>
-					<td>{{tsk.date != null ? (task.date | date:medium):"без даты"}}</td>
+					<td>{{task.date != null ? (task.date | date:"medium"):"без даты"}}</td>
 					<td>{{task.completed}}</td>
 				</tr>
 
