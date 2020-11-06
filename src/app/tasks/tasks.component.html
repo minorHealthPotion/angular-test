@@ -3,39 +3,32 @@
 		<h4 class="card-title">Список Задач</h4>
 	</div>
 	<div class="card-body table-responsive">
-		<table class="table table-hover">
-			<thead class="text-warning">
-				<th>номер</th>
-				<th>название</th>
-				<th>преоритет</th>
-				<th>категория</th>
-				<th>дата</th>
-			</thead>
-			<tbody>
-				<tr [class.completed]="task.completed" *ngFor="let task of tasks ; let i = index">
-					<td>{{i}}</td>
-					<td [class.novalue]="task.category == null">{{task.title}}</td>
-					<td [class.novalue]="task.category == null">
-						{{task.priority != null ? task.priority.title : "без приоритета"}}</td>
-					<td [class.novalue]="task.category == null">
-						{{task.category != null ? task.category.title : "без категории"}}</td>
-					<td [class.novalue]="task.category == null">
-						{{task.date != null ? (task.date | date:"medium"):"без даты"}}</td>
-					<td>
-						<div class="form-check">
-							<label class="form-check-label">
-                                  <input 
-                                  (click)="toggleTaskCompleted(task)"
-                                  class="form-check-input" type="checkbox" value="" [checked]="task.completed">
-                                  <span class="form-check-sign">
-                                    <span class="check"></span>
-                                  </span>
-                                </label>
-						</div>
-					</td>
-				</tr>
-
-			</tbody>
+		<table [dataSource]="dataSource" mat-table>
+			<!--color of priority-->
+			<ng-container matColumnDef="color">
+				<th *matHeaderCellDef mat-header-cell>цвет состояния</th>
+				<td *matCellDef="let task" [style.background-color]="getPropertyColor(task)" mat-cell></td>
+			</ng-container>
+			<!--INDEX-->
+			<ng-container matColumnDef="id">
+				<th *matHeaderCellDef mat-header-cell>индекс</th>
+				<td *matCellDef="let index = index" mat-cell>{{index+1}}</td>
+			</ng-container>
+			<!--name of task-->
+			<ng-container matColumnDef="title">
+				<th *matHeaderCellDef mat-header-cell>название</th>
+				<td *matCellDef="let task" [class.complited]="task.complited" mat-cell>
+					{{task.title}}
+				</td>
+			</ng-container>
+			<!--date of complited task-->
+			<ng-container matColumnDef="date">
+				<th *matHeaderCellDef mat-header-cell>дата</th>
+				<td *matCellDef="let task" [ngClass]="{'complited':task.complited, 'nodate':task.date == null}"
+					mat-cell>
+					{{task.date | date:format:"medium"}}
+				</td>
+			</ng-container>
 		</table>
 	</div>
 </div>

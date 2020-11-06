@@ -8,9 +8,20 @@ import { CategoriesComponent } from "./categories/categories.component";
 import { DataHandleService } from "./service/data-handle.service";
 import { TasksComponent } from "./tasks/tasks.component";
 import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
+import { MatTableModule } from "@angular/material/table";
+import { MatSortModule } from "@angular/material/sort";
+import { MatPaginator } from "@angular/material/paginator";
 
 @NgModule({
-  imports: [BrowserModule, FormsModule, BrowserAnimationsModule],
+  imports: [
+    BrowserModule,
+    FormsModule,
+    BrowserAnimationsModule,
+    MatTableModule,
+    MatSortModule,
+    MatPaginator,
+    BrowserAnimationsModule
+  ],
   declarations: [
     AppComponent,
     HelloComponent,
