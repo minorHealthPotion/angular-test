@@ -17,18 +17,37 @@
 			<!--name of task-->
 			<ng-container matColumnDef="title">
 				<th *matHeaderCellDef mat-header-cell>название</th>
-				<td *matCellDef="let task" [class.complited]="task.complited" mat-cell>
+				<td *matCellDef="let task" [class.completed]="task.completed" mat-cell>
 					{{task.title}}
 				</td>
 			</ng-container>
-			<!--date of complited task-->
+			<!--date of completed task-->
 			<ng-container matColumnDef="date">
 				<th *matHeaderCellDef mat-header-cell>дата</th>
-				<td *matCellDef="let task" [ngClass]="{'complited':task.complited, 'nodate':task.date == null}"
+				<td *matCellDef="let task" [ngClass]="{'completed':task.completed, 'nodate':task.date == null}"
 					mat-cell>
 					{{task.date | date:format:"medium"}}
 				</td>
 			</ng-container>
+			<!--priority-->
+			<ng-container matColumnDef="priority">
+				<th *matHeaderCellDef mat-header-cell>приоритет</th>
+				<td *matCellDef="let task" [ngClass]="{'completed':task.complite,'nopriority': task.priority == null}"
+					mat-cell-def>{{task.priority ? task.priority.title : "без приоритета"}}</td>
+			</ng-container>
+			<!--category-->
+			<ng-container matColumnDef="category">
+				<th *matHeaderCellDef mat-header-cell>категории</th>
+				<td *matCellDef="let task" [ngClass]="{'completed':task.completed, 'nocategory':task.category}"
+					mat-cell>
+					{{task.category ? task.category.title : "без категории"}}
+				</td>
+			</ng-container>
+			<!--механизм отображения всех этих контейнеров-->
+			<!--заголовок таблицы-->
+			<tr *matHeaderRowDef="displayedColums;" mat-header-row></tr>
+			<!---->
+			<tr *matRowDef="let row; columns:displayedColums;"></tr>
 		</table>
 	</div>
 </div>
